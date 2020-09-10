@@ -1,0 +1,584 @@
+/*-----------------------------------------------------------------------------------------*/
+
+.main-banner {
+	align-content: center;
+	/* position: fixed; */
+	top: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	background-color: #999999;
+}
+
+.navbar {
+	background-color: #3325f6;
+	height: 44px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 10000;
+}
+
+.navbar-title {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	text-align: center;
+	line-height: 44px;
+	font-size: 16px;
+	font-weight: 500;
+	color: white;
+}
+
+.navbar-close {
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 44px;
+	height: 44px;
+	cursor: pointer;
+}
+
+.navbar-close {
+	background-image: url(image/navbarback.png);
+	background-size: 16px 16px;
+	background-position: 14px 14px;
+	background-repeat: no-repeat;
+}
+
+.navbar-back {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 44px;
+	height: 44px;
+	cursor: pointer;
+}
+
+.navbar-back {
+	background-image: url(image/navbarback.png);
+	background-size: 9px 16px;
+	background-position-x: 17px;
+	background-repeat: no-repeat;
+	background-position-y: center;
+}
+
+.sku-product-header > .sku-product-slider div {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+	.sku-product-header > .sku-product-slider div img {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+	}
+
+/* Resolution */
+.productlist-products {
+	/* margin: 0px 18px; */
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 12px;
+	padding-bottom: 12px;
+}
+
+	.productlist-products:first-child {
+		margin-top: 20px;
+	}
+
+.tab-content > .productlist-products {
+	margin-top: 20px;
+}
+
+.productlist-product {
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+}
+
+.productlist-product, .productlist-products > a {
+	background: white;
+	border-radius: 4px;
+	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.09);
+	position: relative;
+}
+
+	.productlist-products > a > .productlist-product {
+		border: none;
+		box-shadow: none;
+	}
+
+.productlist-product-image {
+	overflow: hidden;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	margin-bottom: 4px;
+	padding-top: 56.79%;
+	position: relative;
+	overflow: hidden;
+}
+
+	.productlist-product-image > img {
+		min-width: 100%;
+		max-width: 100%;
+		min-height: 100%;
+		max-height: 100%;
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		object-fit: contain;
+	}
+
+.productlist-product-data {
+	font-size: 12px;
+	margin: 8px 8px 0px;
+	line-height: 17px;
+	letter-spacing: 0.5px;
+	padding-bottom: 30px;
+}
+
+.productlist-product-data-title {
+	text-align: -webkit-left;
+	height: 36px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	/* autoprefixer: off */
+	-webkit-box-orient: vertical;
+	/* autoprefixer: on */
+}
+
+/* If the screen size is 375px wide or less, set the max-width of title to 10em */
+@media screen and (max-width: 375px) {
+	.productlist-product-data-title > size {
+		max-width: 10em;
+	}
+}
+
+/* If the screen size is 376px wide or more, not set max-width */
+@media screen and (min-width: 376px) {
+	.productlist-product-data-title > size2 {
+		max-width: 0em;
+	}
+}
+
+
+.productlist-product-data-price {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	margin: 6px 8px 10px;
+	font-size: 17px;
+	font-weight: bold;
+	line-height: 0.88;
+}
+
+.productlist-product-data-price-previous {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	margin: 6px 8px 8px;
+	font-size: 11px;
+	line-height: 1.42;
+	letter-spacing: 0.5px;
+	color: #999999;
+	text-decoration: line-through;
+}
+
+.productlist-product-data-price.--red {
+	color: #f62529;
+	font-size: 15px;
+}
+
+.productlist-products.productlist-products--sku .productlist-product .productlist-product-image {
+	padding-top: 100%;
+	background: #f9f9f9;
+}
+
+	.productlist-products.productlist-products--sku .productlist-product .productlist-product-image > img {
+		object-fit: fill;
+	}
+
+.productlist-products.productlist-products--sku .productlist-product-data-price {
+	letter-spacing: -0.5px;
+}
+
+.productlist-products.productlist-products--sku .productlist-product-data-price-previous {
+	letter-spacing: -0.22px;
+}
+
+.sku-product-header {
+	width: 100%;
+	padding-top: 100%;
+	background: #cccccc;
+	position: relative;
+	overflow: hidden;
+}
+
+	.sku-product-header .bx-wrapper {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+
+.sku-product-slider {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.sku-product-header > .sku-product-slider div {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+	.sku-product-header > .sku-product-slider div img {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+	}
+
+.sku-product-data {
+	padding: 20px 20px 20px;
+	border-bottom: 1px solid #ebebeb;
+	overflow: hidden;
+}
+
+.sku-product-title {
+	font-size: 25px;
+	font-weight: bold;
+	letter-spacing: -0.22px;
+}
+
+.sku-product-subtitle {
+	font-size: 13px;
+	letter-spacing: -0.26px;
+	line-height: 37px;
+}
+
+.sku-product-price {
+	font-size: 24px;
+	letter-spacing: -0.48px;
+}
+
+	.sku-product-price.--red {
+		font-weight: bold;
+		font-size: 24px;
+		letter-spacing: -0.48px;
+		color: #f62529;
+	}
+
+.sku-product-price-discount {
+	font-weight: normal;
+	font-size: 10px;
+	letter-spacing: -0.29px;
+	background-color: #ebebeb;
+	padding: 0px 6px;
+	color: #3a3433;
+	position: relative;
+	top: -4px;
+}
+
+
+.sku-product-price-previous {
+	font-weight: normal;
+	font-size: 13px;
+	color: #999999;
+	text-decoration: line-through;
+	margin-left: 8px;
+}
+
+.sku-product-options-title {
+	float: left;
+	font-size: 14px;
+	color: #999999;
+}
+
+.sku-product-options-subtitle {
+	float: left;
+	clear: left;
+	font-size: 10px;
+	color: #999999;
+}
+
+
+.sku-product-options-detail {
+	float: right;
+	margin-right: 26px;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.sku-product-detail {
+	padding: 20px;
+}
+
+	.sku-product-detail.--collapse {
+		max-height: 167px;
+		overflow: hidden;
+	}
+
+.sku-product-detail-title {
+	font-weight: bold;
+	font-size: 17px;
+	margin-bottom: 8px;
+}
+
+.sku-product-detail-content {
+	font-size: 14px;
+	line-height: 24px;
+	color: #000000;
+}
+
+	.sku-product-detail-content strong {
+		font-weight: 500;
+	}
+
+.sku-home-header {
+	font-size: 13px;
+	margin: 15px 20px 10px;
+	letter-spacing: -0.15px;
+	position: relative;
+}
+
+.sku-home-header-title {
+	font-weight: 1000;
+}
+
+.rows .row {
+	display: inline-block;
+	vertical-align: -webkit-baseline-middle;
+}
+
+.searchArea {
+	background-color: #999999;
+}
+
+	.searchArea > img {
+		width: 40px;
+	}
+
+.searchBox {
+	width: 85%;
+	background: #999999;
+	line-height: 50px;
+	border: none;
+	font-size: x-large;
+}
+
+	.searchBox::placeholder {
+		color: black;
+		font-size: x-large;
+	}
+
+
+.selectPatternArea {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+	.selectPatternArea > div > button {
+		background-color: white;
+		border: none;
+		padding: 1px 1px;
+	}
+
+		.selectPatternArea > div > button > img {
+			width: 35px;
+		}
+
+.btnLoadmore {
+	background-color: #6275f1;
+	color: white;
+	padding: 5px 15px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+}
+
+@media (max-width:500px) {
+	.searchBox {
+		line-height: 30px;
+		font-size: large;
+	}
+
+	.searchArea > img {
+		width: 25px
+	}
+}
+
+.productlist-responsive-text-position {
+	padding-Top: 28%
+}
+
+@media (min-width:0){
+	.main-banner > img {
+		width: -webkit-fill-available;
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	
+}
+
+@media (min-width: 400px){
+	.productlist-responsive-text-position {
+		padding-Top: 35%
+	}
+}
+
+@media (min-width:800px){
+	.main-banner > img {
+		width: 80%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.productlist-products {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.productlist-responsive-text-position {
+		padding-Top: 40%
+	}
+}
+
+.mcdonald-bar-cart {
+	position: absolute;
+	right: 0;
+	width: 44px;
+	height: 44px;
+	cursor: pointer;
+	text-align: center;
+}
+
+.mcdonald-bar-cart {
+	background-image: url(image/pizza-basket@2x.png);
+	background-size: 24px 24px;
+	background-position: 10px 10px;
+	background-repeat: no-repeat;
+}
+
+.mcdonald-bar-cart-badge {
+	display: inline;
+	position: relative;
+	top: 10px;
+	padding: 0px 3px;
+	border-radius: 5px;
+	min-height: 10px;
+	max-height: 10px;
+	line-height: 10px;
+	background: #15dcab;
+	color: white;
+	font-weight: bold;
+	font-size: 12px;
+	letter-spacing: 0.09px;
+}
+
+.mcdonald-cart-text-empty {
+	text-align: center;
+	padding-top: 50px;
+	height: 50px;
+}
+
+.mcdonald-cart-title {
+	text-align: center;
+	font-weight: bold;
+}
+
+.mcdonald-item-card {
+	position: relative;
+	border-top: 1px solid #ebebeb;
+}
+
+.mcdonald-cart-content .mcdonald-item-card {
+	border-top: none;
+	border-bottom: 1px solid #e5e5e5;
+}
+
+	.mcdonald-cart-content .mcdonald-item-card:last-child {
+		border-bottom: none;
+	}
+
+.mcdonald-item-card-image {
+	position: absolute;
+	top: 18px;
+	left: 20px;
+	width: 64px;
+	height: 64px;
+	border-radius: 32px;
+	overflow: hidden;
+	background: #f6f7fb;
+}
+
+	.mcdonald-item-card-image > img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+.mcdonald-item-card-head {
+	background: white;
+	overflow: hidden;
+	padding: 20px 0px 50px 97px;
+	position: relative;
+}
+
+.mcdonald-item-card-detail-text {
+	color: #999999;
+	font-size: 13px;
+	line-height: 22px;
+	letter-spacing: 0.42px;
+}
+
+.mcdonald-item-card-title {
+	font-weight: bold;
+	font-size: 12px;
+	letter-spacing: 0.46px;
+	line-height: 18px;
+	margin: 15px 117px 0px 0px;
+	min-height: 36px;
+}
+
+.mcdonald-item-card-total {
+	position: absolute;
+	right: 20px;
+	top: 35px;
+	font-weight: 500;
+	font-size: 14px;
+	letter-spacing: 0.29px;
+}
+
+.MuiDialogActions-root {
+	display: flow-root !important;
+}
+
+.productlist-product-add-product {
+	background-color: red;
+	color: white;
+	height: 30px;
+	padding-top: 6px;
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.09);
+}
+
+/*-----------------------------------------------------------------------------------------*/
+
