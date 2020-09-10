@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import TopbarComponent from '../global_components/Topbar';
-import axios from 'axios';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { render } from 'react-dom';
@@ -32,11 +31,14 @@ class ProductSummary extends React.Component {
         this.props.ProductAction.setSelectProductItem(null);
     }
 
+    onClickAddress = () => {
+        this.props.history.push('../product-customer-address');
+    }
+
     render() {
 
         const selectProduct = this.props.Product.selectProductItem;
         console.log(selectProduct);
-        const customerList = this.state.customerDetail;
 
         return (
             <React.Fragment>
@@ -60,9 +62,9 @@ class ProductSummary extends React.Component {
                             <div className="pizza-detail-title">ที่อยู่สำหรับจัดส่ง</div>
 
                             {this.state.customerDetail.length === 0 ?
-                                <div className="pizza-address-card pizza-address-card--no-address">
-                                    <div className="pizza-address-card-icon"></div>
-                                    <div className="pizza-address-card-instruction">
+                                <div className="pizza-address-card pizza-address-card--no-address" onClick={() => this.onClickAddress()}>
+                                    <div className="pizza-address-card-icon" ></div>
+                                    <div className="pizza-address-card-instruction" >
                                         ระบุที่อยู่จัดส่ง
                                     </div>
                                 </div>
@@ -72,11 +74,9 @@ class ProductSummary extends React.Component {
                                     <div className="pizza-address-card-name">
                                         นลิดา สมวัน
                                     </div>
-                                    {/*<a href="sku-address.html">*/}
-                                    <div className="pizza-address-card-action">
+                                    <div className="pizza-address-card-action" onClick={() => this.onClickAddress()}>
                                         เลือกที่อยู่อื่น
                                     </div>
-                                    {/*</a>*/}
                                     <div className="pizza-address-card-mobile">
                                         099 999 9999
                                     </div>
@@ -117,9 +117,9 @@ class ProductSummary extends React.Component {
                                         </div>
 
                                         <div className="pizza-item-card-commands">
-                                            <a className="pizza-item-card-commands-delete" onClick={this.onClickRemove}>ลบรายการ</a>
+                                            <a className="pizza-item-card-commands-delete" onClick={() => this.onClickRemove()}>ลบรายการ </a>
                                     |
-                                    <span className="pizza-item-card-commands-detail">รายละเอียดสินค้า</span>
+                                    <span className="pizza-item-card-commands-detail"> รายละเอียดสินค้า</span>
                                         </div>
 
                                         <div className="pizza-item-card-total">
