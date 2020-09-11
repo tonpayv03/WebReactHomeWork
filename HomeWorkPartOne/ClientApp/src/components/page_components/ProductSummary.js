@@ -14,13 +14,11 @@ class ProductSummary extends React.Component {
         super(props);
         this.state = {
             disCountPrice: 100,
-            customerDetail: []
         };
     }
 
     componentDidMount() {
         this.props.PageAction.setPageID(3);
-
     }
 
     onError = (e) => {
@@ -38,6 +36,7 @@ class ProductSummary extends React.Component {
     render() {
 
         const selectProduct = this.props.Product.selectProductItem;
+        const customerDetail = this.props.Customer.customerDetail;
         console.log(selectProduct);
 
         return (
@@ -61,8 +60,8 @@ class ProductSummary extends React.Component {
                         <div className="content content--scrollable">
                             <div className="pizza-detail-title">ที่อยู่สำหรับจัดส่ง</div>
 
-                            {this.state.customerDetail.length === 0 ?
-                                <div className="pizza-address-card pizza-address-card--no-address" onClick={() => this.onClickAddress()}>
+                            {customerDetail.length === 0 ?
+                                <div className="pizza-address-card pizza-address-card--no-address" onClick={this.onClickAddress}>
                                     <div className="pizza-address-card-icon" ></div>
                                     <div className="pizza-address-card-instruction" >
                                         ระบุที่อยู่จัดส่ง
@@ -72,26 +71,34 @@ class ProductSummary extends React.Component {
                                 <div className="pizza-address-card">
                                     <div className="pizza-address-card-icon"></div>
                                     <div className="pizza-address-card-name">
-                                        นลิดา สมวัน
+                                        {customerDetail.Name}
                                     </div>
-                                    <div className="pizza-address-card-action" onClick={() => this.onClickAddress()}>
+                                    <div className="pizza-address-card-action" onClick={this.onClickAddress}>
                                         เลือกที่อยู่อื่น
                                     </div>
                                     <div className="pizza-address-card-mobile">
-                                        099 999 9999
+                                        {customerDetail.TelNo}
                                     </div>
                                     <div className="pizza-address-card-email">
-                                        nalida@krungsri.com
+                                        {customerDetail.Email}
                                     </div>
                                     <div className="pizza-address-card-address">
-                                        295/44 ถนน พระราม3 แขวง บางคอแหลม เขต บางคอแหลม กรุงเทพมหานคร 10120
+                                        {customerDetail.Address} แขวง {customerDetail.SubDistrict} เขต/อำเภอ {customerDetail.District} {customerDetail.Province} {customerDetail.ZipCode}
                                     </div>
-                                    <div className="pizza-address-card-additional-title">
-                                        ข้อมูลที่อยู่เพิ่มเติม
-                                    </div>
-                                    <div className="pizza-address-card-additional-detail">
-                                        ปากซอยอยู่มีเซเว่นอยู่ ตรงข้ามเซเว่นเป็นบ้านสำหรับจัดส่ง
-                                    </div>
+
+                                    {customerDetail.AddressDescription ?
+                                        <React.Fragment>
+                                            <div className="pizza-address-card-additional-title">
+                                                ข้อมูลที่อยู่เพิ่มเติม
+                                            </div>
+                                            <div className="pizza-address-card-additional-detail">
+                                                {customerDetail.AddressDescription}
+                                            </div>
+                                        </React.Fragment>
+                                        :
+                                        null
+                                    }
+
                                 </div>
                             }
 
@@ -117,7 +124,7 @@ class ProductSummary extends React.Component {
                                         </div>
 
                                         <div className="pizza-item-card-commands">
-                                            <a className="pizza-item-card-commands-delete" onClick={() => this.onClickRemove()}>ลบรายการ </a>
+                                            <a className="pizza-item-card-commands-delete" onClick={this.onClickRemove}>ลบรายการ </a>
                                     |
                                     <span className="pizza-item-card-commands-detail"> รายละเอียดสินค้า</span>
                                         </div>

@@ -19,7 +19,6 @@ class Home extends React.Component {
             screenWidth: 0,
             isLoading: true,
             isSelectGrid: true,
-            timeout: []
         };
 
         window.addEventListener("resize", this.updateScreenWidth);
