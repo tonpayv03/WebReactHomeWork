@@ -19,7 +19,7 @@ function Product(state = initialState, action) {
             return { ...state, defaultProductValue: action.DefaultProductValue };
         // { ...state, name of storeState: action.nameprops }
         // เอา data จาก action.props มา setState ให้ storeState
-        // test
+
         default:
             return state;
     }
